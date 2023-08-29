@@ -60,8 +60,8 @@ async def qdrant():
 #     # return response
 #     return {"message": "ok"}
 
-@app.get('/test1')
-async def test1(message: str = Query(None, alias="message")):
+@app.get('/testabc')
+async def testabc(message: str = Query(None, alias="message")):
     return {"message": message}
 
 
