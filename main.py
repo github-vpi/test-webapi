@@ -58,7 +58,7 @@ async def qdrantkey(qdrant-api-key: str = Query(None, alias="qdrant-api-key")):
     # response = {}
     # response['context'] = full_txt
     # return response
-    return {"message": qdrant-api-key}
+    return {"message": "ok"}
 
 @app.get('/test')
 async def test(message: str = Query(None, alias="message")):
