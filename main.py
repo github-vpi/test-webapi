@@ -62,7 +62,9 @@ async def qdrant():
 
 @app.get('/testabc')
 async def testabc(message: str = Query(None, alias="message")):
-    return {"message": message}
+    response = {}
+    response['context'] = message
+    return response
 
 
 @app.get('/test')
