@@ -60,7 +60,7 @@ async def qdrantkey(qdrant-api-key: str = Query(None, alias="qdrant-api-key")):
     #json_string = json.dumps(response)
     #print(response)
     return response
-    #return {"message": "Hello World", "Note": "This is a test"}
+    #return {"message": "Hello World", "Note": "This is a test1"}
 
 @app.get('/test')
 async def test(message: str = Query(None, alias="message")):
