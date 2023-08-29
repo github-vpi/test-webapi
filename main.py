@@ -32,7 +32,7 @@ async def qdrant():
     #json_string = json.dumps(response)
     #print(response)
     return response
-    #return {"message": "Hello World", "Note": "This is a test 123"}
+    #return {"message": "Hello World", "Note": "This is a test 1234"}
 
 
 # @app.get('/qdrantkey')
