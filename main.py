@@ -8,6 +8,13 @@ import json
 
 app = FastAPI()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 from fastapi import Header, APIRouter, HTTPException, FastAPI, UploadFile, File, Request, Form, Query
 import pandas as pd
