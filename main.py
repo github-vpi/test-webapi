@@ -8,6 +8,21 @@ import json
 
 app = FastAPI()
 
+from fastapi import FastAPI, File, UploadFile, HTTPException
+import pandas as pd
+@app.get('/getfile')
+async def upload_csv(csv_file: UploadFile = File(...)):
+    # Check if the uploaded file is a CSV file
+    if csv_file.content_type != "text/csv":
+        raise HTTPException(status_code=415, detail="File attached is not a CSV file")
+    
+    try:
+        # Read the CSV file into a DataFrame
+        df = pd.read_csv(csv_file.file)
+        return {"result": df}
+    except pd.errors.ParserError:
+        raise HTTPException(status_code=400, detail="Invalid CSV file")
+
 @app.get('/qdrant')
 async def qdrant():
 
