@@ -10,7 +10,7 @@ app = FastAPI()
 
 from fastapi import FastAPI, File, UploadFile, HTTPException
 import pandas as pd
-@app.get('/getfile')
+@app.post('/getfile')
 async def upload_csv(csv_file: UploadFile = File(...)):
     # Check if the uploaded file is a CSV file
     if csv_file.content_type != "text/csv":
