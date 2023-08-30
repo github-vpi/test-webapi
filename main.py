@@ -5,9 +5,12 @@ from fastapi.templating import Jinja2Templates
 import uvicorn
 from qdrant_client import QdrantClient
 import json
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
+# Thiết lập các giá trị cho CORS
+origins = ["*"]
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
