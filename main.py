@@ -32,30 +32,30 @@ async def qdrant():
     return response
 
 
-# @app.get('/qdrantkey')
-# async def qdrantkey(qdrant-api-key: str = Query(None, alias="qdrant-api-key")):
+@app.get('/qdrantkey')
+async def qdrantkey(qdrant-api-key: str = Query(None, alias="qdrant-api-key")):
 
-#     # CD_QDRANT_URL = 'https://2aaeafec-b03e-4545-9b12-f8f806ad320a.eu-central-1-0.aws.cloud.qdrant.io:6333'
-#     # CD_QDRANT_API_KEY = qdrant-api-key
-#     # # CD_QDRANT_API_KEY = 'QoB7detTXir9bCdMhGNP9tPdWs61VUWChrH9tROY6YXgo4wtD6LNCg'
-#     # collection_name = 'context'
+    CD_QDRANT_URL = 'https://2aaeafec-b03e-4545-9b12-f8f806ad320a.eu-central-1-0.aws.cloud.qdrant.io:6333'
+    CD_QDRANT_API_KEY = qdrant-api-key
+    # CD_QDRANT_API_KEY = 'QoB7detTXir9bCdMhGNP9tPdWs61VUWChrH9tROY6YXgo4wtD6LNCg'
+    collection_name = 'context'
     
-#     # qdrant_client = QdrantClient(url=CD_QDRANT_URL, api_key=CD_QDRANT_API_KEY)
+    qdrant_client = QdrantClient(url=CD_QDRANT_URL, api_key=CD_QDRANT_API_KEY)
     
-#     # all_points = qdrant_client.scroll(
-#     #                 collection_name=collection_name, 
-#     #                 limit=1000,
-#     #                 with_payload=True,
-#     #                 with_vectors=False,
-#     #             )
-#     # full_txt = ''
-#     # for i in range(len(all_points[0])):
-#     #     full_txt += all_points[0][i].payload['page_content'] + '\n'
+    all_points = qdrant_client.scroll(
+                    collection_name=collection_name, 
+                    limit=1000,
+                    with_payload=True,
+                    with_vectors=False,
+                )
+    full_txt = ''
+    for i in range(len(all_points[0])):
+        full_txt += all_points[0][i].payload['page_content'] + '\n'
     
-#     # response = {}
-#     # response['context'] = full_txt
-#     # return response
-#     return {"message": "ok"}
+    response = {}
+    response['context'] = full_txt
+    return response
+
 
 @app.get('/testabc')
 async def testabc(message: str = Query(None, alias="message")):
@@ -78,7 +78,7 @@ async def test(message: str = Query(None, alias="message")):
     return HTMLResponse(content=content, status_code=200)
 
 @app.get('/')
-async def test():
+async def index():
     content = f"""<html>
                     <head>
                         <title>Test Page</title>
