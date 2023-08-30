@@ -33,10 +33,10 @@ async def qdrant():
 
 
 @app.get('/qdrantkey')
-async def qdrantkey(qdrant-api-key: str = Query(None, alias="qdrant-api-key")):
+async def qdrantkey(qdrant_api_key: str = Query(None, alias="qdrant_api_key")):
 
     CD_QDRANT_URL = 'https://2aaeafec-b03e-4545-9b12-f8f806ad320a.eu-central-1-0.aws.cloud.qdrant.io:6333'
-    CD_QDRANT_API_KEY = qdrant-api-key
+    CD_QDRANT_API_KEY = qdrant_api_key
     # CD_QDRANT_API_KEY = 'QoB7detTXir9bCdMhGNP9tPdWs61VUWChrH9tROY6YXgo4wtD6LNCg'
     collection_name = 'context'
     
