@@ -84,14 +84,14 @@ async def qdrantkey(qdrant_api_key: str = Query(None, alias="qdrant_api_key")):
     return response
 
 
-@app.get('/testabc')
+@app.post('/testabc')
 async def testabc(message: str = Query(None, alias="message")):
     response = {}
     response['context'] = message
     return response
 
 
-@app.get('/test')
+@app.post('/test')
 async def test(message: str = Query(None, alias="message")):
     content = f"""<html>
                     <head>
