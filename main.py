@@ -26,7 +26,7 @@ import json as json
 async def upload_csv(csv_file: UploadFile = File(...)):
     # Check if the uploaded file is a CSV file
     if csv_file.content_type != "text/csv":
-        raise HTTPException(status_code=415, detail="File attached is not a CSV file")
+        raise HTTPException(status_code=415, detail="File attached is not a CSV file 1")
     
     try:
         # Read the CSV file into a DataFrame
