@@ -23,7 +23,7 @@ async def upload_csv(csv_file: UploadFile = File(...)):
         df = pd.read_csv(csv_file.file)
         return {"result": df}
     except pd.errors.ParserError:
-        raise HTTPException(status_code=400, detail="Invalid CSV file")
+        raise HTTPException(status_code=400, detail="Invalid CSV file 1")
 
 @app.get('/qdrant')
 async def qdrant():
