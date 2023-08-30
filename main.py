@@ -29,10 +29,7 @@ async def qdrant():
     
     response = {}
     response['context'] = full_txt
-    #json_string = json.dumps(response)
-    #print(response)
     return response
-    #return {"message": "Hello World", "Note": "This is a test 1234"}
 
 
 # @app.get('/qdrantkey')
