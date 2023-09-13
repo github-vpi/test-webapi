@@ -104,15 +104,15 @@ async def test(message: str = Query(None, alias="message")):
                   </html>"""
     return HTMLResponse(content=content, status_code=200)
 
-@app.get('/')
-async def index():
-    content = f"""<html>
-                    <head>
-                        <title>Test Page</title>
-                    </head>
-                    <body>
-                        <h1>Test Page</h1>
-                        <p>Message: Hello, This is a very simple page created by FastAPI </p>
-                    </body>
-                  </html>"""
-    return HTMLResponse(content=content, status_code=200)
+# @app.get('/')
+# async def index():
+#     content = f"""<html>
+#                     <head>
+#                         <title>Test Page</title>
+#                     </head>
+#                     <body>
+#                         <h1>Test Page</h1>
+#                         <p>Message: Hello, This is a very simple page created by FastAPI </p>
+#                     </body>
+#                   </html>"""
+#     return HTMLResponse(content=content, status_code=200)
